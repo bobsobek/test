@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Save the world 12345</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>Give me your info</h1>
+    {%if intro%}
+    <p> {{intro}}</p>
+    {% endif %}
+    <p>
+      I am going to sell your info for crypto
+    </p>
+    <form method ='POST'>
+      <input type="text" name="name"/>
+      <input type="submit" value="Send data" />
+    </form>
+    {% if name %}
+    {{ name }}
+    {%endif%}
+
+    {% if nums %}
+      {% for num in nums %}
+      {{num}}
+      {%endfor%}
+    {%endif%}
+  </body>  
+</html>
